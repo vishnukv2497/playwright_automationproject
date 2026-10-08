@@ -10,7 +10,7 @@ test.describe('known-bug users', { tag: '@regression' }, () => {
     test.use({ storageState: { cookies: [], origins: [] } });
 
     test('problem_user: sorting by Name (Z to A) reorders the products', async ({ loginPage, inventoryPage }) => {
-        // App bug (intentional): sorting does nothing for problem_user. The list stays A to Z and the dropdown snaps back.
+        // Apps bug (intentional): sorting does nothing for problem_user. The list stays A to Z and the dropdown snaps back.
         test.fail();
         let expectedOrder: string[] = [];
 
