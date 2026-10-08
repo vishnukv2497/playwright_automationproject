@@ -1,0 +1,3064 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Vishnu.v\\Downloads\\playwright\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--project=chromium"
+    ],
+    "configFile": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\playwright.config.ts",
+    "rootDir": "C:/Users/Vishnu.v/Downloads/playwright/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Vishnu.v/Downloads/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "C:/Users/Vishnu.v/Downloads/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.setup\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Vishnu.v/Downloads/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/Vishnu.v/Downloads/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Vishnu.v/Downloads/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/Vishnu.v/Downloads/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Vishnu.v/Downloads/playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/Vishnu.v/Downloads/playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        null
+      ],
+      [
+        "C:\\Users\\Vishnu.v\\Downloads\\playwright\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/playwright-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "log in as standard_user",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1023,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:41.636Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-a77874815681d77b3160",
+          "file": "auth.setup.ts",
+          "line": 7,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "api\\get_user.spec.ts",
+      "file": "api/get_user.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Verify GET users API - page 2",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 671,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "APIResponse: 200 OK\n  Date: Thu, 08 Oct 2026 09:48:44 GMT\n  Content-Type: application/json; charset=utf-8\n  Transfer-Encoding: chunked\n  Connection: keep-alive\n  Access-Control-Allow-Origin: *\n  Cache-Control: public, max-age=14400, s-maxage=60\n  cdn-cache-control: max-age=60\n  Cross-Origin-Opener-Policy: same-origin\n  Cross-Origin-Resource-Policy: cross-origin\n  etag: W/\"5f6-+6NJQG10Gk4CkQ8jUhrGczGADWk\"\n  Nel: {\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}\n  Origin-Agent-Cluster: ?1\n  Ratelimit-Limit: 20\n  Ratelimit-Policy: 20;w=60\n  Ratelimit-Remaining: 19\n  Ratelimit-Reset: 60\n  Referrer-Policy: strict-origin-when-cross-origin\n  Report-To: {\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=Mju6ZueqpggE6DUwmBLphvQsc9Yu55ztMvKnoeuE2f8%3D\\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\\u0026ts=1791450806\"}],\"max_age\":3600}\n  Reporting-Endpoints: heroku-nel=\"https://nel.heroku.com/reports?s=Mju6ZueqpggE6DUwmBLphvQsc9Yu55ztMvKnoeuE2f8%3D&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&ts=1791450806\"\n  Server: cloudflare\n  Strict-Transport-Security: max-age=31536000; includeSubDomains\n  Via: 1.1 heroku-router\n  X-Content-Type-Options: nosniff\n  X-Dns-Prefetch-Control: off\n  X-Download-Options: noopen\n  X-Frame-Options: DENY\n  X-Permitted-Cross-Domain-Policies: none\n  X-Powered-By: ReqRes.in - Deploy backends in 30 seconds\n  X-Ratelimit-Limit: 40\n  X-Ratelimit-Remaining: 36\n  X-Ratelimit-Reset: 1791504000\n  X-Reqres-Docs: https://reqres.in\n  X-Reqres-Message: This API is powered by ReqRes. Deploy your own backend in 30 seconds!\n  X-Reqres-Templates: https://app.reqres.in/templates\n  X-Reqres-Tip: Add real user auth to your app with magic codes - reqres.in/docs\n  X-Reqres-Upgrade: https://app.reqres.in/upgrade\n  X-Request-Id: 0eab6254-19d4-d026-84cf-b2a5aae27d39\n  X-Robots-Tag: noindex, nofollow\n  X-Xss-Protection: 0\n  cf-cache-status: REVALIDATED\n  Content-Encoding: br\n  CF-RAY: a4743b4759fb5958-DEL\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:43.767Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "61e406990624e94acf21-e61756b5f20aa206d39f",
+          "file": "api/get_user.spec.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "api\\post_user.spec.ts",
+      "file": "api/post_user.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Create User - POST API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 589,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  name: \u001b[32m'pavan'\u001b[39m,\n  job: \u001b[32m'trainer'\u001b[39m,\n  id: \u001b[32m'251'\u001b[39m,\n  createdAt: \u001b[32m'2026-10-08T09:48:44.301Z'\u001b[39m,\n  _meta: {\n    powered_by: \u001b[32m'ReqRes'\u001b[39m,\n    docs_url: \u001b[32m'https://app.reqres.in/documentation'\u001b[39m,\n    upgrade_url: \u001b[32m'https://app.reqres.in/upgrade'\u001b[39m,\n    example_url: \u001b[32m'https://app.reqres.in/examples/notes-app'\u001b[39m,\n    variant: \u001b[32m'v1_b'\u001b[39m,\n    message: \u001b[32m'This is a read-only demo endpoint. Sign up to create your own collections with full CRUD and auth.'\u001b[39m,\n    cta: { label: \u001b[32m'Get started'\u001b[39m, url: \u001b[32m'https://app.reqres.in/upgrade'\u001b[39m },\n    context: \u001b[32m'legacy_success'\u001b[39m\n  }\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:43.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b956af3effdd3a29974-d7998a5955298901d637",
+          "file": "api/post_user.spec.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ui\\cart.spec.ts",
+      "file": "ui/cart.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Login with valid credentials",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1481,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:43.796Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f5f17e11a7b0c7b72a70-20466175d051d04f6fbd",
+          "file": "ui/cart.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ui\\checkout.spec.ts",
+      "file": "ui/checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "checkout",
+          "file": "ui/checkout.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "overview totals add up",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1737,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Add 3 items and get to the overview",
+                          "duration": 956
+                        },
+                        {
+                          "title": "Item total is the sum of the item prices",
+                          "duration": 31
+                        },
+                        {
+                          "title": "Tax is 8% of the item total, rounded to the cent",
+                          "duration": 5
+                        },
+                        {
+                          "title": "Total is item total plus tax",
+                          "duration": 5
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:46.775Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "c753ec2ac07f89fe56db-badaaa349aa3cd0883ec",
+              "file": "ui/checkout.spec.ts",
+              "line": 68,
+              "column": 9
+            }
+          ],
+          "suites": [
+            {
+              "title": "validation",
+              "file": "ui/checkout.spec.ts",
+              "line": 7,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "firstName is required",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 1794,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Continue without firstName",
+                              "duration": 915
+                            },
+                            {
+                              "title": "Exact error is shown and checkout does not advance",
+                              "duration": 33
+                            }
+                          ],
+                          "startTime": "2026-10-08T09:48:43.823Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "c753ec2ac07f89fe56db-77770d4dd1ed325f814b",
+                  "file": "ui/checkout.spec.ts",
+                  "line": 9,
+                  "column": 17
+                },
+                {
+                  "title": "lastName is required",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 1995,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Continue without lastName",
+                              "duration": 903
+                            },
+                            {
+                              "title": "Exact error is shown and checkout does not advance",
+                              "duration": 24
+                            }
+                          ],
+                          "startTime": "2026-10-08T09:48:44.486Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "c753ec2ac07f89fe56db-5bfed4b1b7c6f34df813",
+                  "file": "ui/checkout.spec.ts",
+                  "line": 9,
+                  "column": 17
+                },
+                {
+                  "title": "postalCode is required",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1919,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Continue without postalCode",
+                              "duration": 863
+                            },
+                            {
+                              "title": "Exact error is shown and checkout does not advance",
+                              "duration": 22
+                            }
+                          ],
+                          "startTime": "2026-10-08T09:48:44.524Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "c753ec2ac07f89fe56db-3a352c5ab502643f11eb",
+                  "file": "ui/checkout.spec.ts",
+                  "line": 9,
+                  "column": 17
+                }
+              ]
+            },
+            {
+              "title": "cancel",
+              "file": "ui/checkout.spec.ts",
+              "line": 24,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "on \"Your Information\" goes back to the cart",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 1850,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Add an item and start checkout",
+                              "duration": 1032
+                            },
+                            {
+                              "title": "Cancel",
+                              "duration": 124
+                            },
+                            {
+                              "title": "Back on the cart with the item still in it",
+                              "duration": 31
+                            }
+                          ],
+                          "startTime": "2026-10-08T09:48:45.565Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "c753ec2ac07f89fe56db-f894e0c570402dea4a05",
+                  "file": "ui/checkout.spec.ts",
+                  "line": 25,
+                  "column": 13
+                },
+                {
+                  "title": "on \"Overview\" goes back to the inventory",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 1731,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Add an item and get to the overview",
+                              "duration": 1070
+                            },
+                            {
+                              "title": "Cancel",
+                              "duration": 68
+                            },
+                            {
+                              "title": "Back on the inventory with the item still in the cart",
+                              "duration": 25
+                            }
+                          ],
+                          "startTime": "2026-10-08T09:48:45.909Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "c753ec2ac07f89fe56db-1fdd9acc216e6bc40256",
+                  "file": "ui/checkout.spec.ts",
+                  "line": 45,
+                  "column": 13
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\demoqa-form.spec.ts",
+      "file": "ui/demoqa-form.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "test",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 4969,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:46.795Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8028d121742eef1d4eaa-e1c59425cf0a7a49b4ba",
+          "file": "ui/demoqa-form.spec.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ui\\example.spec.ts",
+      "file": "ui/example.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "has title",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1475,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:47.456Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "32a381f56210e42147c0-061230fe4ffc0592d497",
+          "file": "ui/example.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "get started link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 1660,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:48:47.676Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "32a381f56210e42147c0-7b3531effedb88a54e4a",
+          "file": "ui/example.spec.ts",
+          "line": 10,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ui\\known-bugs.spec.ts",
+      "file": "ui/known-bugs.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "known-bug users",
+          "file": "ui/known-bugs.spec.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "problem_user: sorting by Name (Z to A) reorders the products",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "location": {
+                        "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                        "line": 14,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "failed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6639,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('inventory-item-name')\nTimeout: 5000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[2m    \"Sauce Labs Backpack\",\u001b[22m\n\u001b[31m+   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[31m+   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('inventory-item-name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('inventory-item-name')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('inventory-item-name')\nTimeout: 5000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[2m    \"Sauce Labs Backpack\",\u001b[22m\n\u001b[31m+   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[31m+   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('inventory-item-name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('inventory-item-name')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:30:51\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:29:9",
+                        "location": {
+                          "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                          "column": 51,
+                          "line": 30
+                        },
+                        "snippet": "  28 |\n  29 |         await test.step('All 6 names are in Z to A order', async () => {\n> 30 |             await expect(inventoryPage.itemNames).toHaveText(expectedOrder);\n     |                                                   ^\n  31 |         });\n  32 |     });\n  33 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                            "column": 51,
+                            "line": 30
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('inventory-item-name')\nTimeout: 5000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[2m    \"Sauce Labs Backpack\",\u001b[22m\n\u001b[31m+   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[31m+   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('inventory-item-name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('inventory-item-name')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\n\n  28 |\n  29 |         await test.step('All 6 names are in Z to A order', async () => {\n> 30 |             await expect(inventoryPage.itemNames).toHaveText(expectedOrder);\n     |                                                   ^\n  31 |         });\n  32 |     });\n  33 |\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:30:51\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:29:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Log in as problem_user",
+                          "duration": 772
+                        },
+                        {
+                          "title": "Sort by Name (Z to A)",
+                          "duration": 11
+                        },
+                        {
+                          "title": "All 6 names are in Z to A order",
+                          "duration": 5008,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('inventory-item-name')\nTimeout: 5000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[2m    \"Sauce Labs Backpack\",\u001b[22m\n\u001b[31m+   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[31m+   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('inventory-item-name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('inventory-item-name')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('inventory-item-name')\nTimeout: 5000ms\n\u001b[32m- Expected  - 5\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[32m-   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[2m    \"Sauce Labs Backpack\",\u001b[22m\n\u001b[31m+   \"Sauce Labs Bike Light\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Bolt T-Shirt\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Fleece Jacket\",\u001b[39m\n\u001b[31m+   \"Sauce Labs Onesie\",\u001b[39m\n\u001b[31m+   \"Test.allTheThings() T-Shirt (Red)\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('inventory-item-name') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('inventory-item-name')\u001b[22m\n\u001b[2m    14 × locator resolved to 6 elements\u001b[22m\n\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:30:51\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:29:9",
+                            "location": {
+                              "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                              "column": 51,
+                              "line": 30
+                            },
+                            "snippet": "  28 |\n  29 |         await test.step('All 6 names are in Z to A order', async () => {\n> 30 |             await expect(inventoryPage.itemNames).toHaveText(expectedOrder);\n     |                                                   ^\n  31 |         });\n  32 |     });\n  33 |"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:48.565Z",
+                      "annotations": [
+                        {
+                          "type": "fail",
+                          "location": {
+                            "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                            "line": 14,
+                            "column": 14
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\test-results\\ui-known-bugs-known-bug-us-f8195--to-A-reorders-the-products-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                        "column": 51,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68e9e6b362570321ac55-beba49ead433b4f33bc2",
+              "file": "ui/known-bugs.spec.ts",
+              "line": 12,
+              "column": 9
+            },
+            {
+              "title": "standard_user: every product shows its own image",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1261,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Log in as standard_user",
+                          "duration": 681
+                        },
+                        {
+                          "title": "The 6 product images are 6 different images",
+                          "duration": 25
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:48.965Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68e9e6b362570321ac55-9dd0b38d89f8b4d7a4e6",
+              "file": "ui/known-bugs.spec.ts",
+              "line": 37,
+              "column": 13
+            },
+            {
+              "title": "problem_user: every product shows its own image",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "description": "problem_user shows the same placeholder image for every product",
+                      "location": {
+                        "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                        "line": 40,
+                        "column": 18
+                      }
+                    }
+                  ],
+                  "expectedStatus": "failed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 1258,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:50:47\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:48:13",
+                        "location": {
+                          "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                          "column": 47,
+                          "line": 50
+                        },
+                        "snippet": "  48 |             await test.step('The 6 product images are 6 different images', async () => {\n  49 |                 const sources = await inventoryPage.itemImages.evaluateAll((images) => images.map((image) => image.getAttribute('src')));\n> 50 |                 expect(new Set(sources).size).toBe(6);\n     |                                               ^\n  51 |             });\n  52 |         });\n  53 |     }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                            "column": 47,
+                            "line": 50
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\n  48 |             await test.step('The 6 product images are 6 different images', async () => {\n  49 |                 const sources = await inventoryPage.itemImages.evaluateAll((images) => images.map((image) => image.getAttribute('src')));\n> 50 |                 expect(new Set(sources).size).toBe(6);\n     |                                               ^\n  51 |             });\n  52 |         });\n  53 |     }\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:50:47\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:48:13"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Log in as problem_user",
+                          "duration": 676
+                        },
+                        {
+                          "title": "The 6 product images are 6 different images",
+                          "duration": 34,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m1\u001b[39m",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m6\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:50:47\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:48:13",
+                            "location": {
+                              "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                              "column": 47,
+                              "line": 50
+                            },
+                            "snippet": "  48 |             await test.step('The 6 product images are 6 different images', async () => {\n  49 |                 const sources = await inventoryPage.itemImages.evaluateAll((images) => images.map((image) => image.getAttribute('src')));\n> 50 |                 expect(new Set(sources).size).toBe(6);\n     |                                               ^\n  51 |             });\n  52 |         });\n  53 |     }"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:49.404Z",
+                      "annotations": [
+                        {
+                          "type": "fail",
+                          "description": "problem_user shows the same placeholder image for every product",
+                          "location": {
+                            "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                            "line": 40,
+                            "column": 18
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\test-results\\ui-known-bugs-known-bug-us-9b885-product-shows-its-own-image-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                        "column": 47,
+                        "line": 50
+                      }
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68e9e6b362570321ac55-198e286c6d41bb4d1fce",
+              "file": "ui/known-bugs.spec.ts",
+              "line": 37,
+              "column": 13
+            },
+            {
+              "title": "error_user: can complete a purchase",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "location": {
+                        "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                        "line": 58,
+                        "column": 14
+                      }
+                    }
+                  ],
+                  "expectedStatus": "failed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 6866,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('complete-header')\nExpected: \u001b[32m\"Thank you for your order!\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('complete-header') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('complete-header')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('complete-header')\nExpected: \u001b[32m\"Thank you for your order!\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('complete-header') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('complete-header')\u001b[22m\n\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:77:63\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:75:9",
+                        "location": {
+                          "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                          "column": 63,
+                          "line": 77
+                        },
+                        "snippet": "  75 |         await test.step('Finish shows the order confirmation', async () => {\n  76 |             await checkoutOverviewPage.finish();\n> 77 |             await expect(checkoutCompletePage.completeHeader).toHaveText('Thank you for your order!');\n     |                                                               ^\n  78 |         });\n  79 |     });\n  80 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                            "column": 63,
+                            "line": 77
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('complete-header')\nExpected: \u001b[32m\"Thank you for your order!\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('complete-header') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('complete-header')\u001b[22m\n\n\n  75 |         await test.step('Finish shows the order confirmation', async () => {\n  76 |             await checkoutOverviewPage.finish();\n> 77 |             await expect(checkoutCompletePage.completeHeader).toHaveText('Thank you for your order!');\n     |                                                               ^\n  78 |         });\n  79 |     });\n  80 |\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:77:63\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:75:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Log in as error_user and add the Backpack",
+                          "duration": 778
+                        },
+                        {
+                          "title": "Check out with customer details",
+                          "duration": 214
+                        },
+                        {
+                          "title": "Finish shows the order confirmation",
+                          "duration": 5066,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('complete-header')\nExpected: \u001b[32m\"Thank you for your order!\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('complete-header') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('complete-header')\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByTestId('complete-header')\nExpected: \u001b[32m\"Thank you for your order!\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('complete-header') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('complete-header')\u001b[22m\n\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:77:63\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts:75:9",
+                            "location": {
+                              "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                              "column": 63,
+                              "line": 77
+                            },
+                            "snippet": "  75 |         await test.step('Finish shows the order confirmation', async () => {\n  76 |             await checkoutOverviewPage.finish();\n> 77 |             await expect(checkoutCompletePage.completeHeader).toHaveText('Thank you for your order!');\n     |                                                               ^\n  78 |         });\n  79 |     });\n  80 |"
+                          }
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:50.246Z",
+                      "annotations": [
+                        {
+                          "type": "fail",
+                          "location": {
+                            "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                            "line": 58,
+                            "column": 14
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\test-results\\ui-known-bugs-known-bug-us-ef92c-ser-can-complete-a-purchase-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\known-bugs.spec.ts",
+                        "column": 63,
+                        "line": 77
+                      }
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68e9e6b362570321ac55-f52a7120fa2515e52f1c",
+              "file": "ui/known-bugs.spec.ts",
+              "line": 55,
+              "column": 9
+            },
+            {
+              "title": "performance_glitch_user: login completes within 10 seconds",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [
+                    {
+                      "type": "login time",
+                      "description": "5299 ms"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 7242,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Log in as performance_glitch_user",
+                          "duration": 6096
+                        },
+                        {
+                          "title": "Inventory appeared within 10 s",
+                          "duration": 2
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:50.704Z",
+                      "annotations": [
+                        {
+                          "type": "login time",
+                          "description": "5299 ms"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68e9e6b362570321ac55-7bee9ba7a3e41c72b87c",
+              "file": "ui/known-bugs.spec.ts",
+              "line": 81,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\login-data-driven.spec.ts",
+      "file": "ui/login-data-driven.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SauceDemo - login with all known users",
+          "file": "ui/login-data-driven.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "standard (standard_user) - can login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1182,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-08T09:48:51.799Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0587d32a3ac17ba13e12-abc8f8d682fe8be525d0",
+              "file": "ui/login-data-driven.spec.ts",
+              "line": 9,
+              "column": 13
+            },
+            {
+              "title": "lockedOut (locked_out_user) - cannot login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 951,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-08T09:48:53.001Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0587d32a3ac17ba13e12-1ee7d47d072357444ada",
+              "file": "ui/login-data-driven.spec.ts",
+              "line": 9,
+              "column": 13
+            },
+            {
+              "title": "problem (problem_user) - can login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1049,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-08T09:48:53.969Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0587d32a3ac17ba13e12-eb3f7eee5368fcf272ce",
+              "file": "ui/login-data-driven.spec.ts",
+              "line": 9,
+              "column": 13
+            },
+            {
+              "title": "performanceGlitch (performance_glitch_user) - can login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7065,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-08T09:48:55.036Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0587d32a3ac17ba13e12-6fcf10d7ea17faf17df3",
+              "file": "ui/login-data-driven.spec.ts",
+              "line": 9,
+              "column": 13
+            },
+            {
+              "title": "error (error_user) - can login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1082,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-08T09:48:55.251Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0587d32a3ac17ba13e12-701dd11493dbc0f9fd46",
+              "file": "ui/login-data-driven.spec.ts",
+              "line": 9,
+              "column": 13
+            },
+            {
+              "title": "visual (visual_user) - can login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1366,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-08T09:48:56.351Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0587d32a3ac17ba13e12-012a67c4e750a3aadd77",
+              "file": "ui/login-data-driven.spec.ts",
+              "line": 9,
+              "column": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\login.spec.ts",
+      "file": "ui/login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "standard_user lands on the inventory showing 6 products",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1421,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Log in as standard_user",
+                      "duration": 729
+                    },
+                    {
+                      "title": "Inventory page shows 6 products",
+                      "duration": 173
+                    }
+                  ],
+                  "startTime": "2026-10-08T09:48:57.227Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "25217b8bb4316ea872c4-ad381b24ed3bb4bee275",
+          "file": "ui/login.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ],
+      "suites": [
+        {
+          "title": "login is rejected",
+          "file": "ui/login.spec.ts",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "locked_out_user",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1569,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Submit username \"locked_out_user\" and password \"***\"",
+                          "duration": 918
+                        },
+                        {
+                          "title": "Exact error is shown and the user stays on the login page",
+                          "duration": 22
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:57.751Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25217b8bb4316ea872c4-22a5c300de7f12104b10",
+              "file": "ui/login.spec.ts",
+              "line": 22,
+              "column": 13
+            },
+            {
+              "title": "wrong password",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1488,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Submit username \"standard_user\" and password \"***\"",
+                          "duration": 818
+                        },
+                        {
+                          "title": "Exact error is shown and the user stays on the login page",
+                          "duration": 17
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:57.996Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25217b8bb4316ea872c4-8b9c12732f8751489bf9",
+              "file": "ui/login.spec.ts",
+              "line": 22,
+              "column": 13
+            },
+            {
+              "title": "empty username",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1343,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Submit username \"\" and password \"***\"",
+                          "duration": 673
+                        },
+                        {
+                          "title": "Exact error is shown and the user stays on the login page",
+                          "duration": 21
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:58.676Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25217b8bb4316ea872c4-e2a17de828ec294ffc99",
+              "file": "ui/login.spec.ts",
+              "line": 22,
+              "column": 13
+            },
+            {
+              "title": "empty password",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1627,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Submit username \"standard_user\" and password \"\"",
+                          "duration": 847
+                        },
+                        {
+                          "title": "Exact error is shown and the user stays on the login page",
+                          "duration": 14
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:59.351Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "25217b8bb4316ea872c4-58d1e8ae4ae0f320b994",
+              "file": "ui/login.spec.ts",
+              "line": 22,
+              "column": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\logout.spec.ts",
+      "file": "ui/logout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "logout",
+          "file": "ui/logout.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "returns to the login page",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 2612,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Open the inventory (already logged in)",
+                          "duration": 837
+                        },
+                        {
+                          "title": "Log out from the menu",
+                          "duration": 1070
+                        },
+                        {
+                          "title": "Login page is shown",
+                          "duration": 14
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:48:59.530Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "623cebb733135aff17bd-0bc0c450dfa6d8703cb3",
+              "file": "ui/logout.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "blocks going straight to /inventory.html afterwards",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2092,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Log out",
+                          "duration": 1308
+                        },
+                        {
+                          "title": "Go straight to /inventory.html",
+                          "duration": 84
+                        },
+                        {
+                          "title": "Redirected to the login page with an error",
+                          "duration": 66
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:00.054Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "623cebb733135aff17bd-e60204d3164fe5ff541e",
+              "file": "ui/logout.spec.ts",
+              "line": 21,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\product-detail.spec.ts",
+      "file": "ui/product-detail.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "product detail",
+          "file": "ui/product-detail.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Sauce Labs Backpack matches its inventory card",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1960,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read the inventory card",
+                          "duration": 796
+                        },
+                        {
+                          "title": "Open the product",
+                          "duration": 75
+                        },
+                        {
+                          "title": "Name, description and price match the card",
+                          "duration": 23
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:01.034Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e78cab2a36211508e36a-2925cca2595189921047",
+              "file": "ui/product-detail.spec.ts",
+              "line": 6,
+              "column": 13
+            },
+            {
+              "title": "Sauce Labs Bike Light matches its inventory card",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2028,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read the inventory card",
+                          "duration": 834
+                        },
+                        {
+                          "title": "Open the product",
+                          "duration": 145
+                        },
+                        {
+                          "title": "Name, description and price match the card",
+                          "duration": 39
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:02.137Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e78cab2a36211508e36a-b33c64ffa10d2d7efc81",
+              "file": "ui/product-detail.spec.ts",
+              "line": 6,
+              "column": 13
+            },
+            {
+              "title": "Sauce Labs Bolt T-Shirt matches its inventory card",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1997,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read the inventory card",
+                          "duration": 905
+                        },
+                        {
+                          "title": "Open the product",
+                          "duration": 78
+                        },
+                        {
+                          "title": "Name, description and price match the card",
+                          "duration": 16
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:02.189Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e78cab2a36211508e36a-a1e0f013efc6fb6bae2a",
+              "file": "ui/product-detail.spec.ts",
+              "line": 6,
+              "column": 13
+            },
+            {
+              "title": "Sauce Labs Fleece Jacket matches its inventory card",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1996,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read the inventory card",
+                          "duration": 811
+                        },
+                        {
+                          "title": "Open the product",
+                          "duration": 162
+                        },
+                        {
+                          "title": "Name, description and price match the card",
+                          "duration": 28
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:02.191Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e78cab2a36211508e36a-ac77062108054ce9982e",
+              "file": "ui/product-detail.spec.ts",
+              "line": 6,
+              "column": 13
+            },
+            {
+              "title": "Sauce Labs Onesie matches its inventory card",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1781,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read the inventory card",
+                          "duration": 791
+                        },
+                        {
+                          "title": "Open the product",
+                          "duration": 85
+                        },
+                        {
+                          "title": "Name, description and price match the card",
+                          "duration": 21
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:03.022Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e78cab2a36211508e36a-3cfb2fe09734c95fdea2",
+              "file": "ui/product-detail.spec.ts",
+              "line": 6,
+              "column": 13
+            },
+            {
+              "title": "Test.allTheThings() T-Shirt (Red) matches its inventory card",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2300,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read the inventory card",
+                          "duration": 963
+                        },
+                        {
+                          "title": "Open the product",
+                          "duration": 102
+                        },
+                        {
+                          "title": "Name, description and price match the card",
+                          "duration": 31
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:04.209Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e78cab2a36211508e36a-a2d18fb4736499c0682c",
+              "file": "ui/product-detail.spec.ts",
+              "line": 6,
+              "column": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\purchase.spec.ts",
+      "file": "ui/purchase.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "end-to-end purchase of 2 items",
+          "ok": true,
+          "tags": [
+            "smoke"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 2586,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "Add 2 items from the inventory",
+                      "duration": 1157
+                    },
+                    {
+                      "title": "Cart shows both items with their inventory prices",
+                      "duration": 148
+                    },
+                    {
+                      "title": "Enter customer details",
+                      "duration": 436
+                    },
+                    {
+                      "title": "Overview lists both items",
+                      "duration": 32
+                    },
+                    {
+                      "title": "Finish shows the order confirmation",
+                      "duration": 48
+                    },
+                    {
+                      "title": "Cart badge is cleared",
+                      "duration": 6
+                    }
+                  ],
+                  "startTime": "2026-10-08T09:49:04.230Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe8288cb68f2df89cfeb-3194a21e01dbaa05dac6",
+          "file": "ui/purchase.spec.ts",
+          "line": 5,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "ui\\saucelabs-pricing-navigation.spec.ts",
+      "file": "ui/saucelabs-pricing-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "SauceDemo - navigate to Sauce Labs pricing",
+          "file": "ui/saucelabs-pricing-navigation.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Select API and Mobile Beta Testing plan from the About > Pricing flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 10000,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Open the inventory page (already logged in)",
+                          "duration": 1065
+                        },
+                        {
+                          "title": "Open About page from the menu",
+                          "duration": 1387
+                        },
+                        {
+                          "title": "Go to Pricing page",
+                          "duration": 3342
+                        },
+                        {
+                          "title": "Click Get started",
+                          "duration": 1766
+                        },
+                        {
+                          "title": "Select API and Mobile Beta Testing plan",
+                          "duration": 1105
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:04.240Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "065935228403c83fd1c4-650343227c3243aae915",
+              "file": "ui/saucelabs-pricing-navigation.spec.ts",
+              "line": 4,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\shopping-cart.spec.ts",
+      "file": "ui/shopping-cart.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "cart",
+          "file": "ui/shopping-cart.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "adding from the inventory page puts the item in the cart",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2119,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Add the Backpack from the inventory",
+                          "duration": 1147
+                        },
+                        {
+                          "title": "Badge shows 1 and the card button switches to Remove",
+                          "duration": 23
+                        },
+                        {
+                          "title": "Cart contains the Backpack",
+                          "duration": 67
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:04.832Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8cf520ca05c12d61644-3138a0766f72e52b831b",
+              "file": "ui/shopping-cart.spec.ts",
+              "line": 5,
+              "column": 9
+            },
+            {
+              "title": "removing from the inventory page takes the item out of the cart",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1897,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Add the Backpack, then remove it from the inventory",
+                          "duration": 783
+                        },
+                        {
+                          "title": "Badge is gone and the card button switches back to Add to cart",
+                          "duration": 6
+                        },
+                        {
+                          "title": "Cart is empty",
+                          "duration": 59
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:06.549Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8cf520ca05c12d61644-9069e8efe17982ea199c",
+              "file": "ui/shopping-cart.spec.ts",
+              "line": 22,
+              "column": 9
+            },
+            {
+              "title": "adding from the product detail page puts the item in the cart",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 2276,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Open the Bike Light and add it to the cart",
+                          "duration": 1162
+                        },
+                        {
+                          "title": "Badge shows 1 and the button switches to Remove",
+                          "duration": 21
+                        },
+                        {
+                          "title": "Cart contains the Bike Light",
+                          "duration": 81
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:06.854Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8cf520ca05c12d61644-20aee6f6f261170d9d5d",
+              "file": "ui/shopping-cart.spec.ts",
+              "line": 41,
+              "column": 9
+            },
+            {
+              "title": "removing from the product detail page takes the item out of the cart",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1944,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Open the Bike Light, add it, then remove it",
+                          "duration": 1058
+                        },
+                        {
+                          "title": "Badge is gone and the button switches back to Add to cart",
+                          "duration": 19
+                        },
+                        {
+                          "title": "Cart is empty",
+                          "duration": 38
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:06.976Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8cf520ca05c12d61644-2d64101fc6461afd90c1",
+              "file": "ui/shopping-cart.spec.ts",
+              "line": 59,
+              "column": 9
+            },
+            {
+              "title": "badge counts the items in the cart",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2360,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Badge goes up by one for each item added",
+                          "duration": 1077
+                        },
+                        {
+                          "title": "Badge goes down by one when an item is removed",
+                          "duration": 28
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:08.476Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8cf520ca05c12d61644-0175c2f8858d95461419",
+              "file": "ui/shopping-cart.spec.ts",
+              "line": 79,
+              "column": 9
+            },
+            {
+              "title": "cart persists after a page reload",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3021,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Add 2 items and open the cart",
+                          "duration": 1489
+                        },
+                        {
+                          "title": "Reload the page",
+                          "duration": 746
+                        },
+                        {
+                          "title": "Cart still holds both items",
+                          "duration": 71
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:08.952Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8cf520ca05c12d61644-f945749822aa35d86a66",
+              "file": "ui/shopping-cart.spec.ts",
+              "line": 97,
+              "column": 9
+            },
+            {
+              "title": "Reset App State clears the cart",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3508,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Add 2 items",
+                          "duration": 1198
+                        },
+                        {
+                          "title": "Reset App State from the menu",
+                          "duration": 1174
+                        },
+                        {
+                          "title": "Badge is gone and the cart is empty",
+                          "duration": 178
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:09.158Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "e8cf520ca05c12d61644-c5da67d2c7ab124fae5f",
+              "file": "ui/shopping-cart.spec.ts",
+              "line": 119,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\sorting.spec.ts",
+      "file": "ui/sorting.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "sorting",
+          "file": "ui/sorting.spec.ts",
+          "line": 24,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Name (A to Z) orders the whole list",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3269,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read every product name and price",
+                          "duration": 1244
+                        },
+                        {
+                          "title": "Sort by \"Name (Z to A)\" first so the list is not already in the expected order",
+                          "duration": 41
+                        },
+                        {
+                          "title": "Sort by \"Name (A to Z)\"",
+                          "duration": 20
+                        },
+                        {
+                          "title": "All 6 names are in the expected order",
+                          "duration": 7
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:10.896Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2c0c651bd9b563f592e-e34d69dcd973defe6f7d",
+              "file": "ui/sorting.spec.ts",
+              "line": 26,
+              "column": 13
+            },
+            {
+              "title": "Name (Z to A) orders the whole list",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2781,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read every product name and price",
+                          "duration": 1372
+                        },
+                        {
+                          "title": "Sort by \"Name (Z to A)\"",
+                          "duration": 48
+                        },
+                        {
+                          "title": "All 6 names are in the expected order",
+                          "duration": 11
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:12.017Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2c0c651bd9b563f592e-5b2986bbb007de2f2e56",
+              "file": "ui/sorting.spec.ts",
+              "line": 26,
+              "column": 13
+            },
+            {
+              "title": "Price (low to high) orders the whole list",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3023,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read every product name and price",
+                          "duration": 894
+                        },
+                        {
+                          "title": "Sort by \"Price (low to high)\"",
+                          "duration": 65
+                        },
+                        {
+                          "title": "All 6 prices are in the expected order",
+                          "duration": 22
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:12.711Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2c0c651bd9b563f592e-e2d01179da096212e336",
+              "file": "ui/sorting.spec.ts",
+              "line": 26,
+              "column": 13
+            },
+            {
+              "title": "Price (high to low) orders the whole list",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2550,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Read every product name and price",
+                          "duration": 1177
+                        },
+                        {
+                          "title": "Sort by \"Price (high to low)\"",
+                          "duration": 33
+                        },
+                        {
+                          "title": "All 6 prices are in the expected order",
+                          "duration": 13
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:14.199Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b2c0c651bd9b563f592e-f1465d7b734b2038184e",
+              "file": "ui/sorting.spec.ts",
+              "line": 26,
+              "column": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui\\visual.spec.ts",
+      "file": "ui/visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "visual",
+          "file": "ui/visual.spec.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "standard_user inventory matches the baseline",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2988,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Open the inventory as standard_user",
+                          "duration": 1049
+                        },
+                        {
+                          "title": "Inventory looks the same as the baseline",
+                          "duration": 873
+                        }
+                      ],
+                      "startTime": "2026-10-08T09:49:14.288Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6a48469c94ebefc30a24-4fc538901126b4260d4f",
+              "file": "ui/visual.spec.ts",
+              "line": 11,
+              "column": 9
+            }
+          ],
+          "suites": [
+            {
+              "title": "logged out",
+              "file": "ui/visual.spec.ts",
+              "line": 22,
+              "column": 10,
+              "specs": [
+                {
+                  "title": "login page matches the baseline",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2031,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Open the login page",
+                              "duration": 862
+                            },
+                            {
+                              "title": "Login page looks the same as the baseline",
+                              "duration": 588
+                            }
+                          ],
+                          "startTime": "2026-10-08T09:49:14.837Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "6a48469c94ebefc30a24-7e9d92ecfae1416530ed",
+                  "file": "ui/visual.spec.ts",
+                  "line": 25,
+                  "column": 13
+                },
+                {
+                  "title": "visual_user inventory differs from the standard_user baseline",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [
+                        {
+                          "type": "fail",
+                          "location": {
+                            "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts",
+                            "line": 41,
+                            "column": 18
+                          }
+                        }
+                      ],
+                      "expectedStatus": "failed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 3,
+                          "status": "failed",
+                          "duration": 3209,
+                          "error": {
+                            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  34046 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: inventory.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(inventory.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n",
+                            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  34046 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: inventory.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(inventory.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts:50:36\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts:49:13",
+                            "location": {
+                              "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts",
+                              "column": 36,
+                              "line": 50
+                            },
+                            "snippet": "  48 |\n  49 |             await test.step('Inventory looks the same as the standard_user baseline', async () => {\n> 50 |                 await expect(page).toHaveScreenshot('inventory.png', { fullPage: true });\n     |                                    ^\n  51 |             });\n  52 |         });\n  53 |     });"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts",
+                                "column": 36,
+                                "line": 50
+                              },
+                              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  34046 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: inventory.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(inventory.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\n\n  48 |\n  49 |             await test.step('Inventory looks the same as the standard_user baseline', async () => {\n> 50 |                 await expect(page).toHaveScreenshot('inventory.png', { fullPage: true });\n     |                                    ^\n  51 |             });\n  52 |         });\n  53 |     });\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts:50:36\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts:49:13"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Log in as visual_user",
+                              "duration": 1059
+                            },
+                            {
+                              "title": "Inventory looks the same as the standard_user baseline",
+                              "duration": 1535,
+                              "error": {
+                                "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  34046 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: inventory.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(inventory.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n",
+                                "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  34046 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: inventory.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(inventory.png)\" with timeout 5000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 34046 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts:50:36\n    at C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts:49:13",
+                                "location": {
+                                  "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts",
+                                  "column": 36,
+                                  "line": 50
+                                },
+                                "snippet": "  48 |\n  49 |             await test.step('Inventory looks the same as the standard_user baseline', async () => {\n> 50 |                 await expect(page).toHaveScreenshot('inventory.png', { fullPage: true });\n     |                                    ^\n  51 |             });\n  52 |         });\n  53 |     });"
+                              }
+                            }
+                          ],
+                          "startTime": "2026-10-08T09:49:15.789Z",
+                          "annotations": [
+                            {
+                              "type": "fail",
+                              "location": {
+                                "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts",
+                                "line": 41,
+                                "column": 18
+                              }
+                            }
+                          ],
+                          "attachments": [
+                            {
+                              "name": "inventory-expected.png",
+                              "contentType": "image/png",
+                              "path": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts-snapshots\\inventory-chromium-win32.png"
+                            },
+                            {
+                              "name": "inventory-actual.png",
+                              "contentType": "image/png",
+                              "path": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\test-results\\ui-visual-visual-logged-ou-98be3--the-standard-user-baseline-chromium\\inventory-actual.png"
+                            },
+                            {
+                              "name": "inventory-diff.png",
+                              "contentType": "image/png",
+                              "path": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\test-results\\ui-visual-visual-logged-ou-98be3--the-standard-user-baseline-chromium\\inventory-diff.png"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\test-results\\ui-visual-visual-logged-ou-98be3--the-standard-user-baseline-chromium\\error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "C:\\Users\\Vishnu.v\\Downloads\\playwright\\tests\\ui\\visual.spec.ts",
+                            "column": 36,
+                            "line": 50
+                          }
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "6a48469c94ebefc30a24-d5313193147b19a86fc4",
+                  "file": "ui/visual.spec.ts",
+                  "line": 36,
+                  "column": 13
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T09:48:40.922Z",
+    "duration": 38251.571,
+    "expected": 53,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
