@@ -1,0 +1,13 @@
+{
+  "browser": {
+    "browserName": "chromium",
+    "launchOptions": {
+      "channel": "chrome-for-testing",
+      "headless": false
+    },
+    "contextOptions": {
+      "viewport": { "width": 1280, "height": 720 }
+    }
+  },
+  "testIdAttribute": "data-test"
+}
