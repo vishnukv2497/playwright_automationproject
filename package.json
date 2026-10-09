@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
-    "scripts": {
-      "test:inventory": "playwright test tests/inventory.spec.ts --project=chromium",
-      "test:inventory:summary": "node utils/createExecutionSummary.cjs"
-    },
+  "scripts": {
+    "test:inventory": "playwright test tests/inventory.spec.ts --project=chromium",
+    "test:inventory:summary": "node utils/createExecutionSummary.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.64.0",
     "@types/node": "^26.6.4"

@@ -1,17 +1,26 @@
-const fs = require('node:fs');
-const path = require('node:path');
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import type { JSONReport, JSONReportSuite, JSONReportTestResult } from '@playwright/test/reporter';
+
+type ExecutionStatus = 'passed' | 'failed' | 'skipped';
+
+interface Execution {
+  title: string;
+  status: ExecutionStatus;
+  result?: JSONReportTestResult;
+}
 
 const resultsPath = path.resolve('test-results/inventory-results.json');
 const summaryPath = path.resolve('test-results/inventory-execution-summary.md');
-const report = JSON.parse(fs.readFileSync(resultsPath, 'utf8'));
-const executions = [];
+const report: JSONReport = JSON.parse(fs.readFileSync(resultsPath, 'utf8'));
+const executions: Execution[] = [];
 
-function collectSuites(suites) {
+function collectSuites(suites: JSONReportSuite[] | undefined) {
   for (const suite of suites ?? []) {
     for (const spec of suite.specs ?? []) {
       for (const test of spec.tests ?? []) {
         const result = test.results?.at(-1);
-        const status = test.expectedStatus === 'skipped' || result?.status === 'skipped'
+        const status: ExecutionStatus = test.expectedStatus === 'skipped' || result?.status === 'skipped'
           ? 'skipped'
           : result?.status === 'passed'
             ? 'passed'
@@ -25,12 +34,12 @@ function collectSuites(suites) {
 
 collectSuites(report.suites);
 
-const counts = executions.reduce((totals, execution) => {
+const counts = executions.reduce<Record<ExecutionStatus, number>>((totals, execution) => {
   totals[execution.status] += 1;
   return totals;
 }, { passed: 0, failed: 0, skipped: 0 });
 
-function failureDetails(execution) {
+function failureDetails(execution: Execution): string {
   const error = execution.result?.error ?? execution.result?.errors?.[0];
   const location = error?.location;
   const failedStep = location
