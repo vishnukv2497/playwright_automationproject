@@ -7,7 +7,7 @@ const byPrice = (a: string, b: string) => toCents(a) - toCents(b);
 
 interface SortCase {
     option: SortOption;
-    /** Which list the sort order is checked on. Prices tie at $15.99, so price sorts compare prices, not names. */
+    /** Which lists the sorts order is checked on. Prices tie at $15.99, so price sorts compare prices, not names. */
     list: 'names' | 'prices';
     expected: (names: string[], prices: string[]) => string[];
     /** The page opens sorted A to Z, so that case first switches away to prove the sort really runs. */
