@@ -1,70 +1,71 @@
-import { Page, Locator } from '@playwright/test';
-
-export type SortOption =
-    | 'Name (A to Z)'
-    | 'Name (Z to A)'
-    | 'Price (low to high)'
-    | 'Price (high to low)';
+import { Locator, Page } from '@playwright/test';
 
 export class InventoryPage {
-    page: Page;
-    readonly title: Locator;
-    readonly sortDropdown: Locator;
-    readonly inventoryItems: Locator;
-    readonly itemNames: Locator;
-    readonly itemPrices: Locator;
-    readonly itemImages: Locator;
+  constructor(private readonly page: Page) {}
 
-    constructor(page: Page) {
-        this.page = page;
-        this.title = page.getByTestId('title');
-        this.sortDropdown = page.getByRole('combobox', { name: 'Sort products' });
-        this.inventoryItems = page.getByTestId('inventory-item');
-        this.itemNames = page.getByTestId('inventory-item-name');
-        this.itemPrices = page.getByTestId('inventory-item-price');
-        this.itemImages = this.inventoryItems.getByRole('img');
-    }
+  readonly username = this.page.getByRole('textbox', { name: 'Username' });
+  readonly password = this.page.getByRole('textbox', { name: 'Password' });
+  readonly loginButton = this.page.getByRole('button', { name: 'Login' });
+  readonly products = this.page.locator('.inventory_item');
+  readonly cartBadge = this.page.locator('.shopping_cart_badge');
+  readonly cartLink = this.page.locator('[data-test="shopping-cart-link"]');
+  readonly sortDropdown = this.page.locator('[data-test="product-sort-container"]');
+  readonly headerLogo = this.page.locator('.app_logo');
 
-    async goto() {
-        await this.page.goto('/inventory.html');
-    }
+  async openLoginPage() {
+    await this.page.goto('https://www.saucedemo.com/');
+  }
 
-    /** The product card whose name is exactly productName. */
-    item(productName: string): Locator {
-        return this.inventoryItems.filter({ has: this.page.getByText(productName, { exact: true }) });
-    }
+  async login(username = 'standard_user', password = 'secret_sauce') {
+    await this.username.fill(username);
+    await this.password.fill(password);
+    await this.loginButton.click();
+  }
 
-    addToCartButton(productName: string): Locator {
-        return this.item(productName).getByRole('button', { name: 'Add to cart' });
-    }
+  async openInventory() {
+    await this.openLoginPage();
+    await this.login();
+  }
 
-    removeButton(productName: string): Locator {
-        return this.item(productName).getByRole('button', { name: 'Remove' });
-    }
+  productCard(productName: string): Locator {
+    return this.products.filter({
+      has: this.page.getByText(productName, { exact: true }),
+    });
+  }
 
-    /** Name, description and price as shown on the product's inventory card. */
-    async cardDetails(productName: string): Promise<{ name: string; description: string; price: string }> {
-        const card = this.item(productName);
-        return {
-            name: await card.getByTestId('inventory-item-name').innerText(),
-            description: await card.getByTestId('inventory-item-desc').innerText(),
-            price: await card.getByTestId('inventory-item-price').innerText(),
-        };
-    }
+  productNames() {
+    return this.page.locator('.inventory_item_name').allTextContents();
+  }
 
-    async addToCart(productName: string) {
-        await this.addToCartButton(productName).click();
-    }
+  productPrices() {
+    return this.page.locator('.inventory_item_price').allTextContents();
+  }
 
-    async removeFromCart(productName: string) {
-        await this.removeButton(productName).click();
-    }
+  async addProduct(productName: string) {
+    await this.productCard(productName).getByRole('button', { name: 'Add to cart' }).click();
+  }
 
-    async openProduct(productName: string) {
-        await this.item(productName).getByTestId('inventory-item-name').click();
-    }
+  async removeProduct(productName: string) {
+    await this.productCard(productName).getByRole('button', { name: 'Remove' }).click();
+  }
 
-    async sortBy(option: SortOption) {
-        await this.sortDropdown.selectOption({ label: option });
-    }
+  async openCart() {
+    await this.cartLink.click();
+  }
+
+  async openMenu() {
+    await this.page.getByRole('button', { name: 'Open Menu' }).click();
+  }
+
+  async sortBy(value: 'az' | 'za' | 'lohi' | 'hilo') {
+    await this.sortDropdown.selectOption(value);
+  }
+
+  async openProductByName(productName: string) {
+    await this.productCard(productName).locator('.inventory_item_name').click();
+  }
+
+  async openProductByImage(productName: string) {
+    await this.productCard(productName).locator('img').click();
+  }
 }

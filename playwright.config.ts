@@ -1,16 +1,12 @@
-/// <reference types="node" />
-import path from 'path';
-import dotenv from 'dotenv';
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * Read environment variables (SAUCE_PASSWORD) from .env. See .env.example.
+ * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-dotenv.config({ path: path.resolve(__dirname, '.env'), quiet: true });
-
-/* Login state saved by tests/auth.setup.ts. Browser projects start from it, so tests begin logged in as standard_user. */
-export const STORAGE_STATE = path.join(__dirname, '.auth/standard.json');
+// import dotenv from 'dotenv';
+// import path from 'path';
+// dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -20,49 +16,41 @@ export default defineConfig({
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: Boolean(process.env.CI),
+  forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Run tests serially on CI */
+  /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [
-    ['list'],
-    ['html'],
-    ['allure-playwright'],
-    ['json', { outputFile: 'reports/playwright-report.json' }],
-  ],
+    reporter: [
+      ['html', { outputFolder: 'playwright-report/inventory', open: 'never' }],
+      ['json', { outputFile: 'test-results/inventory-results.json' }],
+    ],
+    outputDir: 'test-results/inventory-artifacts',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'https://www.saucedemo.com',
-    /* saucedemo marks elements with data-test, so getByTestId('title') matches [data-test="title"]. */
-    testIdAttribute: 'data-test',
+      screenshot: 'only-on-failure',
+      trace: 'retain-on-failure',
+    /* Base URL to use in actions like `await page.goto('')`. */
+    // baseURL: 'http://localhost:3000',
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'setup',
-      testMatch: /.*\.setup\.ts/,
-    },
-    {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], storageState: STORAGE_STATE },
-      dependencies: ['setup'],
+      use: { ...devices['Desktop Chrome'] },
     },
+
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'], storageState: STORAGE_STATE },
-      dependencies: ['setup'],
+      use: { ...devices['Desktop Firefox'] },
     },
+
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'], storageState: STORAGE_STATE },
-      dependencies: ['setup'],
+      use: { ...devices['Desktop Safari'] },
     },
 
     /* Test against mobile viewports. */
