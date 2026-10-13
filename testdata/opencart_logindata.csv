@@ -1,0 +1,5 @@
+testName,email,password,expected
+Valid login,pavanol@xyz.com,test@123,success
+Invalid password,pavanol@xyz.com,wrong@123,failure
+Unregistered email,not_registered@xyz.com,test@123,failure
+Empty email and password,,,failure
