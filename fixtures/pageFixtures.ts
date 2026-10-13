@@ -8,6 +8,8 @@ import { LogoutPage } from '../pages/LogoutPage';
 import { SearchResultsPage } from '../pages/SearchResultsPage';
 import { ProductPage } from '../pages/ProductPage';
 import { ShoppingCartPage } from '../pages/ShoppingCartPage';
+import { SoftwarePage } from '../pages/SoftwarePage';
+import { LaptopsNotebooksPage } from '../pages/LaptopsNotebooksPage';
 
 dotenv.config();
 
@@ -22,6 +24,8 @@ type PageFixtures = {
     searchResultsPage: SearchResultsPage;
     productPage: ProductPage;
     shoppingCartPage: ShoppingCartPage;
+    softwarePage: SoftwarePage;
+    laptopsPage: LaptopsNotebooksPage;
 };
 
 export const test = base.extend<PageFixtures>({
@@ -50,6 +54,12 @@ export const test = base.extend<PageFixtures>({
     },
     shoppingCartPage: async ({ page }, use) => {
         await use(new ShoppingCartPage(page));
+    },
+    softwarePage: async ({ page }, use) => {
+        await use(new SoftwarePage(page));
+    },
+    laptopsPage: async ({ page }, use) => {
+        await use(new LaptopsNotebooksPage(page));
     },
 });
 
