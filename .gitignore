@@ -6,9 +6,16 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Environment & secrets (keep .env.example committed)
+.env
+
+# Generated reports
+/reports/
+/custom-report/
 /allure-results/
 /allure-report/
+/dist/
+
+# Playwright CLI session snapshots/logs
 /.playwright-cli/
-/reports/
-/.auth/
-.env
