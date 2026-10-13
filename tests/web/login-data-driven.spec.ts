@@ -1,7 +1,7 @@
 /**
  * Test Case: Login (Data Driven using External File)
  *
- * Tags: @master @datadriven @web
+ * Tags: @master @regression @datadriven @web
  *
  * Data: testdata/opencart_logindata.json (one independent test per row)
  *
@@ -33,7 +33,7 @@ const LOGIN_FAILURE_WARNING =
 for (const data of loginData) {
     const scenario = data.testName ?? data.TestName ?? data.email;
 
-    test(`Login data driven - ${scenario} @master @datadriven @web`, async ({ homePage, loginPage, myAccountPage }) => {
+    test(`Login data driven - ${scenario} @master @regression @datadriven @web`, async ({ homePage, loginPage, myAccountPage }) => {
         // Blank/whitespace values are submitted as empty fields, never replaced with dummy data
         const email = data.email.trim() === '' ? '' : data.email;
         const password = data.password.trim() === '' ? '' : data.password;

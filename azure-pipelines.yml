@@ -1,0 +1,119 @@
+# Azure DevOps pipeline for the OpenCart Playwright framework.
+# Setup: Pipelines > New pipeline > Azure Repos/GitHub > Existing Azure Pipelines YAML file > /azure-pipelines.yml
+# Secrets: add them as secret pipeline variables or in a variable group (see the env: block in the test step).
+# Run manually: Pipelines > Run pipeline > pick suite / browser.
+
+trigger:
+  branches:
+    include:
+      - main
+      - opencart
+
+pr:
+  branches:
+    include:
+      - main
+
+parameters:
+  - name: testSuite
+    displayName: Test suite
+    type: string
+    default: test:master
+    values:
+      - test:master
+      - test:sanity
+      - test:regression
+      - test:e2e
+      - test:api
+      - test:web
+      - test:datadriven
+  - name: browser
+    displayName: Browser
+    type: string
+    default: chromium
+    values:
+      - chromium
+      - firefox
+      - webkit
+
+# Optional: variable group holding APP_EMAIL, APP_PASSWORD, API_USERNAME, API_PASSWORD, DB_* etc.
+# variables:
+#   - group: opencart-playwright-secrets
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: Test
+    displayName: Playwright tests
+    jobs:
+      - job: Playwright
+        timeoutInMinutes: 60
+        steps:
+          - task: NodeTool@0
+            displayName: Use Node.js LTS
+            inputs:
+              versionSpec: 22.x
+
+          - script: npm ci
+            displayName: Install dependencies
+
+          - script: npx playwright install --with-deps ${{ parameters.browser }}
+            displayName: Install Playwright browser
+
+          - script: cp .env.example .env
+            displayName: Create .env with defaults (pipeline variables override these)
+
+          - script: npm run ${{ parameters.testSuite }} -- --project=${{ parameters.browser }} --output=test-results
+            displayName: Run ${{ parameters.testSuite }} on ${{ parameters.browser }}
+            env:
+              CI: "1"
+              # Secret variables must be mapped explicitly. Uncomment once defined.
+              # APP_EMAIL: $(APP_EMAIL)
+              # APP_PASSWORD: $(APP_PASSWORD)
+              # API_USERNAME: $(API_USERNAME)
+              # API_PASSWORD: $(API_PASSWORD)
+              # DB_HOST: $(DB_HOST)
+              # DB_USER: $(DB_USER)
+              # DB_PASSWORD: $(DB_PASSWORD)
+
+          - task: PublishTestResults@2
+            displayName: Publish JUnit results
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFormat: JUnit
+              testResultsFiles: reports/results.xml
+              testRunTitle: Playwright ${{ parameters.testSuite }} (${{ parameters.browser }})
+              mergeTestResults: true
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish Playwright HTML report
+            condition: succeededOrFailed()
+            inputs:
+              targetPath: reports
+              artifact: playwright-report
+              publishLocation: pipeline
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish custom report
+            condition: succeededOrFailed()
+            inputs:
+              targetPath: custom-report
+              artifact: custom-report
+              publishLocation: pipeline
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish Allure results
+            condition: succeededOrFailed()
+            inputs:
+              targetPath: allure-results
+              artifact: allure-results
+              publishLocation: pipeline
+
+          - task: PublishPipelineArtifact@1
+            displayName: Publish traces, screenshots and videos
+            condition: failed()
+            inputs:
+              targetPath: test-results
+              artifact: test-results
+              publishLocation: pipeline
