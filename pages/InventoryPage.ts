@@ -1,5 +1,8 @@
 import { Locator, Page } from '@playwright/test';
 
+/** Option values of the sort dropdown: Name (A to Z), Name (Z to A), Price (low to high), Price (high to low). */
+export type SortOption = 'az' | 'za' | 'lohi' | 'hilo';
+
 export class InventoryPage {
   constructor(private readonly page: Page) {}
 
@@ -57,7 +60,7 @@ export class InventoryPage {
     await this.page.getByRole('button', { name: 'Open Menu' }).click();
   }
 
-  async sortBy(value: 'az' | 'za' | 'lohi' | 'hilo') {
+  async sortBy(value: SortOption) {
     await this.sortDropdown.selectOption(value);
   }
 
