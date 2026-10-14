@@ -8,7 +8,7 @@
     "test:inventory:summary": "node utils/createExecutionSummary.cjs",
     "test:api": "playwright test tests/api --project=chromium",
     "allure:generate": "allure generate allure-results --clean --output allure-report",
-    "allure:open": "allure open allure-report"
+    "allure:open": "allure open allure-report",
     "test:inventory:summary": "node utils/createExecutionSummary.ts"
   },
   "keywords": [],
