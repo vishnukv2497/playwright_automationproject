@@ -24,6 +24,7 @@ export default defineConfig({
     reporter: [
       ['html', { outputFolder: 'playwright-report/inventory', open: 'never' }],
       ['json', { outputFile: 'test-results/inventory-results.json' }],
+      ['allure-playwright', { outputFolder: 'allure-results', detail: true }],
     ],
     outputDir: 'test-results/inventory-artifacts',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -43,15 +44,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    //{
+     // name: 'firefox',
+     // use: { ...devices['Desktop Firefox'] },
+   // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    //{
+    //  name: 'webkit',
+     // use: { ...devices['Desktop Safari'] },
+    //},
 
     /* Test against mobile viewports. */
     // {
