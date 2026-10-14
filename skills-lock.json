@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "test-automation-strategy": {
+      "source": "proffesor-for-testing/agentic-qe",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/test-automation-strategy/SKILL.md",
+      "computedHash": "780cf500739842e4ca908d495a1f3e4419a665a866ae4e391a85e4e42490cfc2"
+    }
+  }
+}
