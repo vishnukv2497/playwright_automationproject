@@ -3,18 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
-    "scripts": {
-      "test:inventory": "playwright test tests/inventory.spec.ts --project=chromium",
-      "test:inventory:summary": "node utils/createExecutionSummary.cjs"
-    },
+  "scripts": {
+    "test:inventory": "playwright test tests/inventory.spec.ts --project=chromium",
+    "test:inventory:summary": "node utils/createExecutionSummary.cjs",
+    "test:api": "playwright test tests/api --project=chromium",
+    "allure:generate": "allure generate allure-results --clean --output allure-report",
+    "allure:open": "allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.64.0",
-    "@types/node": "^26.6.4"
+    "@types/node": "^26.6.4",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.13.0"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.1"
