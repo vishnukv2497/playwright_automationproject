@@ -1,9 +1,0 @@
-
-{
-  "permissions": {
-    "allow": [
-      "PowerShell(git -c credential.helper= -c http.extraheader=* push -u origin main)"
-    ]
-  }
-}
-

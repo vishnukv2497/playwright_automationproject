@@ -1,4 +1,7 @@
 
+# Env
+.env
+
 # Playwright
 node_modules/
 /test-results/
@@ -7,15 +10,10 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 
-# Environment & secrets (keep .env.example committed)
-.env
-
-# Generated reports
-/reports/
-/custom-report/
+# Allure
 /allure-results/
 /allure-report/
-/dist/
 
-# Playwright CLI session snapshots/logs
-/.playwright-cli/
+# Local clutter
+/%LOCALAPPDATA%/
+/.playwright-mcp/

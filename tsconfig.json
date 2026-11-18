@@ -1,19 +1,24 @@
 {
   "compilerOptions": {
     "target": "ES2022",
+    "lib": ["ES2023", "DOM"],
     "module": "NodeNext",
-    "lib": ["ES2022", "DOM"],
-    "moduleResolution": "nodenext",
+    "moduleResolution": "NodeNext",
     "types": ["node"],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": false,
-    "outDir": "dist",
-    "ignoreDeprecations": "6.0"
+    "noEmit": true
   },
-  "include": ["**/*.ts"],
+  "include": [
+    "playwright.config.ts",
+    "tests",
+    "Pages",
+    "fixtures",
+    "testdata",
+    "utils"
+  ],
   "exclude": ["node_modules"]
 }

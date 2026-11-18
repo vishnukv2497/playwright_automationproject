@@ -1,0 +1,458 @@
+/**
+ * Typed representation of Charge_Configuration_Test_Cases_WPS.xlsx
+ * (46 Critical/High cases derived from FSD "Charge Configuration v2.0", PHOC-FSD-ADM-CHG-002).
+ *
+ * Specs reference cases by ID so the suite stays traceable to the manual spec.
+ * Regenerate from the workbook if it changes — do not hand-edit scenario text.
+ */
+
+export type Priority = 'Critical' | 'High';
+
+export type CaseModule =
+  | 'Txn Charge - Global (WPS)'
+  | 'Txn Charge - Preferential (WPS)'
+  | 'Charge Calculation Priority (WPS)'
+  | 'CB Compliance Charges (WPS)'
+  | 'Access Control';
+
+export type TestCase = {
+  id: string;
+  module: CaseModule;
+  scenario: string;
+  priority: Priority;
+  preconditions: string;
+  testData: string;
+  expected: string;
+};
+
+export const chargeConfigurationCases = {
+  'TC-001': {
+    id: 'TC-001',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Create Global charge for WPS with Default Charge Amounts only (Create mode, no rules)',
+    priority: 'Critical',
+    preconditions: 'No Global charge exists for WPS rail; user has Charge Configuration access',
+    testData: 'Fixed=AED 5, Variable=0.10%, Currency=AED, VAT=5%, Min=AED 5, Max=AED 250',
+    expected: "Charge saved/submitted with status 'Pending Approval'; name pattern WPS_Global_xxx; appears in grid",
+  },
+  'TC-002': {
+    id: 'TC-002',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'System prevents creation of a second Active Global charge for the same rail (BR-001)',
+    priority: 'Critical',
+    preconditions: 'An Active Global charge already exists for WPS rail',
+    testData: 'Rail: WPS with one Active Global charge already configured',
+    expected: 'Global tab opens in View/Edit mode; no second concurrent Active Global charge allowed (BR-001)',
+  },
+  'TC-003': {
+    id: 'TC-003',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Global charge applies uniformly across all WPS message types (SIF, DIF, RFA, EIF, PIF)',
+    priority: 'Critical',
+    preconditions: 'Global charge configured for WPS rail',
+    testData: 'WPS message types: SIF, DIF, RFA, EIF, PIF',
+    expected: 'Applicable Messages shows all WPS message types as read-only pills; same config applies to every type',
+  },
+  'TC-004': {
+    id: 'TC-004',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Default Charge Amounts apply when no rule is configured or no rule matches',
+    priority: 'Critical',
+    preconditions: 'Global charge for WPS with Default Charge Amounts set and no matching rules',
+    testData: 'WPS transaction not matching any configured rule condition',
+    expected: 'System falls back to Default Charge Amounts, applying fixed/variable, Min/Max and VAT',
+  },
+  'TC-005': {
+    id: 'TC-005',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Rule-based charge overrides Default Charge Amount when a rule matches',
+    priority: 'Critical',
+    preconditions: 'Global charge for WPS has an active rule (Purpose Code = SALA, AED 5); default differs (AED 10)',
+    testData: 'Rule: Purpose Code = SALA, Per File charge = AED 5; Default Per File charge = AED 10',
+    expected: "Rule's charge (AED 5) applied instead of Default (AED 10)",
+  },
+  'TC-006': {
+    id: 'TC-006',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'First matching rule (lowest Execution Order) is applied and evaluation stops',
+    priority: 'Critical',
+    preconditions: 'Global charge for WPS has 2+ rules whose conditions could both match',
+    testData: 'Rule A: Order 1, Purpose Code=SALA, AED 5; Rule B: Order 2, Amount>0, AED 8',
+    expected: "Only Rule A's charge (AED 5) applied; Rule B not evaluated",
+  },
+  'TC-007': {
+    id: 'TC-007',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Charge calculation combines Fixed (AED) and Variable (%) with Min/Max thresholds',
+    priority: 'Critical',
+    preconditions: 'Charge configured with fixed AED amount, variable % rate, Min and Max',
+    testData: 'Transaction Amount = AED 100; Fixed = AED 5.00; Variable = 0.10%',
+    expected: 'Base Charge = 5.00 + (100 x 0.001) = AED 5.10, within Min 5 / Max 250',
+  },
+  'TC-008': {
+    id: 'TC-008',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'VAT is calculated and added to the base charge to derive the final charge amount',
+    priority: 'Critical',
+    preconditions: 'Base charge AED 5.10 with VAT % configured as 5%',
+    testData: 'Base Charge = AED 5.10; VAT % = 5',
+    expected: 'VAT = AED 0.26; Final Charge = AED 5.36 (FSD calculation example)',
+  },
+  'TC-009': {
+    id: 'TC-009',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Global charge fields remain read-only until Edit is explicitly clicked',
+    priority: 'High',
+    preconditions: 'An existing Global charge is configured for WPS (View mode)',
+    testData: 'N/A',
+    expected: 'Modal opens read-only; fields unlock only after clicking Edit',
+  },
+  'TC-010': {
+    id: 'TC-010',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Deactivating an Active Global charge stops it from being applied at transaction time',
+    priority: 'Critical',
+    preconditions: 'Global charge for WPS is in Active status',
+    testData: 'N/A',
+    expected: 'Confirmation prompted; status becomes Inactive; charge no longer applied (BR-012)',
+  },
+  'TC-011': {
+    id: 'TC-011',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Activating an Inactive Global charge resumes its application at transaction time',
+    priority: 'High',
+    preconditions: 'Global charge for WPS is in Inactive status',
+    testData: 'N/A',
+    expected: 'Confirmation prompted; status becomes Active; charge resumes being applied',
+  },
+  'TC-012': {
+    id: 'TC-012',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Save as Draft persists without submitting; Draft charges are not applied (BR-013)',
+    priority: 'High',
+    preconditions: 'User is creating/editing a Global charge for WPS',
+    testData: 'N/A',
+    expected: "Status 'Draft', not submitted; maker can reopen; not used in calculation (BR-013)",
+  },
+  'TC-013': {
+    id: 'TC-013',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Submit for Approval routes to checker queue; maker cannot approve own submission',
+    priority: 'Critical',
+    preconditions: 'Maker-Checker workflow enabled; user created/edited a Global charge for WPS',
+    testData: 'N/A',
+    expected: "Status 'Pending Approval'; maker blocked from approving; only another checker can approve",
+  },
+  'TC-014': {
+    id: 'TC-014',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Checker rejection returns the charge to the creator with remarks; creator can resubmit',
+    priority: 'High',
+    preconditions: 'A Global charge for WPS is in Pending Approval status',
+    testData: "Rejection remark: e.g., 'Incorrect VAT %'",
+    expected: "Status 'Rejected' with visible remarks; creator can edit and resubmit",
+  },
+  'TC-015': {
+    id: 'TC-015',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Removing a rule is subject to Maker-Checker approval and only takes effect after approval (BR-008)',
+    priority: 'High',
+    preconditions: 'Global charge for WPS has an attached rule; Maker-Checker enabled; Edit mode',
+    testData: 'N/A',
+    expected: 'Rule stays effective until removal is approved by the checker',
+  },
+  'TC-016': {
+    id: 'TC-016',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Browse Rules attaches existing rules; already-attached rule silently skipped (BR-009, BR-010)',
+    priority: 'High',
+    preconditions: 'System rules exist; one rule already attached to the WPS Global charge',
+    testData: "Existing rule already attached: 'WPS ENBD Volume Discount'",
+    expected: 'New rules appended; already-attached rule skipped with no duplicate created',
+  },
+  'TC-017': {
+    id: 'TC-017',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Charge amount fields reject negative values; zero is permitted (BR-014)',
+    priority: 'High',
+    preconditions: 'User entering Default/Rule charge amount fields for WPS Global charge',
+    testData: 'Negative: -5.00; Zero: 0.00; Empty mandatory field',
+    expected: 'Negative rejected with validation error; zero accepted; empty mandatory rejected',
+  },
+  'TC-018': {
+    id: 'TC-018',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Min Charge must be less than or equal to Max Charge when both are configured (BR-007)',
+    priority: 'High',
+    preconditions: 'User configuring Default Charge Amounts footer (Min/Max) for WPS Global charge',
+    testData: 'Min = AED 300; Max = AED 250',
+    expected: 'Configuration rejected with validation error since Min exceeds Max (BR-007)',
+  },
+  'TC-019': {
+    id: 'TC-019',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Rule creation enforces mandatory fields (Rule Name, Charge Bearer); others optional',
+    priority: 'High',
+    preconditions: 'User clicks + New Rule within WPS Global charge',
+    testData: "Rule Name = 'WPS Salary Discount'; Charge Bearer = Own",
+    expected: 'Save blocked without Rule Name or Charge Bearer; saves with only those two provided',
+  },
+  'TC-020': {
+    id: 'TC-020',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'An unconfigured (empty) rule condition field matches all values for that attribute',
+    priority: 'High',
+    preconditions: 'Rule configured with Purpose Code = SALA but Channel left unconfigured',
+    testData: 'Rule: Purpose Code = SALA; Channel = (not configured)',
+    expected: 'Rule matches transactions from every channel; only configured conditions evaluated',
+  },
+  'TC-046': {
+    id: 'TC-046',
+    module: 'Txn Charge - Global (WPS)',
+    scenario: 'Duplicate Global charge with identical Rail/Channel/Message Type/Charge Bearer not permitted (BR-015)',
+    priority: 'High',
+    preconditions: 'A Global charge already exists for WPS with a given combination',
+    testData: 'Rail=WPS, Channel=NestPayHub, Message=SIF, Charge Bearer=Own',
+    expected: 'Save/submit blocked with a duplicate-configuration validation error (BR-015)',
+  },
+
+  'TC-021': {
+    id: 'TC-021',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Create a Preferential charge for a corporate on WPS with mandatory corporate selection (BR-003)',
+    priority: 'Critical',
+    preconditions: 'WPS rail selected under Transaction Charge; user on Preferential tab',
+    testData: 'Corporate: Emirates NBD (CORP-001); Rail: WPS; Valid From: today',
+    expected: 'Corporate appears in Selected Entries Grid; saved with status Pending Approval',
+  },
+  'TC-022': {
+    id: 'TC-022',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Preferential charge submission blocked when no corporate/customer is selected (BR-003)',
+    priority: 'Critical',
+    preconditions: 'User on WPS Preferential tab, no corporate/customer selected',
+    testData: 'N/A',
+    expected: 'Submission blocked with validation error requiring at least one corporate/customer',
+  },
+  'TC-023': {
+    id: 'TC-023',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Active, in-validity Preferential charge takes precedence over the Global charge',
+    priority: 'Critical',
+    preconditions: 'Active Global and Active Preferential charges exist for WPS for corporate ENBD',
+    testData: 'Global default = AED 10/txn; Preferential default = AED 6/txn',
+    expected: 'Preferential charge (AED 6) applied instead of Global (AED 10)',
+  },
+  'TC-024': {
+    id: 'TC-024',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Preferential charge automatically expires on Valid To date; Global becomes effective',
+    priority: 'Critical',
+    preconditions: 'Preferential charge for ENBD on WPS has Valid To in the past',
+    testData: 'Valid To = yesterday',
+    expected: "Status becomes 'Expired'; subsequent transactions charged per Global",
+  },
+  'TC-025': {
+    id: 'TC-025',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Valid From must be on or before Valid To (BR-004)',
+    priority: 'High',
+    preconditions: 'User configuring Valid From/Valid To of a WPS Preferential charge',
+    testData: 'Valid From = 20-09-2026; Valid To = 10-09-2026',
+    expected: 'Entry rejected with validation error since Valid From is after Valid To (BR-004)',
+  },
+  'TC-026': {
+    id: 'TC-026',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Multiple Preferential charges can exist for the same rail, scoped differently (BR-002)',
+    priority: 'High',
+    preconditions: 'WPS rail supports multiple Preferential charges',
+    testData: 'Corporate A, Corporate B; distinct scopes/parameters',
+    expected: 'All three Preferential charges created and listed as separate records (BR-002)',
+  },
+  'TC-027': {
+    id: 'TC-027',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Preferential rules/defaults apply only to the assigned corporate, not other entities',
+    priority: 'Critical',
+    preconditions: 'Preferential charge for ENBD configured on WPS with a rule',
+    testData: 'Preferential charge assigned only to corporate ENBD',
+    expected: "Only ENBD's transaction affected; other corporate falls back to its own/Global charge",
+  },
+  'TC-028': {
+    id: 'TC-028',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Preferential tab always opens as a new creation form; editing only via grid Edit icon',
+    priority: 'High',
+    preconditions: 'At least one Preferential charge already exists for WPS',
+    testData: 'N/A',
+    expected: 'Tab shows blank New Preferential Charge form; edit only via Configured Charges grid',
+  },
+  'TC-029': {
+    id: 'TC-029',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Within a Preferential charge, first matching rule applies, else Preferential defaults',
+    priority: 'Critical',
+    preconditions: 'Preferential charge for ENBD has rule (SALA -> AED 5) and default AED 10',
+    testData: 'Rule: Purpose Code=SALA -> AED 5; Preferential Default = AED 10',
+    expected: 'SALA transaction charged AED 5; non-matching charged AED 10',
+  },
+  'TC-030': {
+    id: 'TC-030',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Browse Corporate/Retail Customer supports multi-select and lookup by CIF/IBAN/BBAN',
+    priority: 'High',
+    preconditions: 'Corporate and retail customer master data exists and is searchable',
+    testData: '2 corporates + 1 retail customer via CIF lookup',
+    expected: 'Selected count updates; Confirm Selection adds all entries to the Selected Entries Grid',
+  },
+  'TC-031': {
+    id: 'TC-031',
+    module: 'Txn Charge - Preferential (WPS)',
+    scenario: 'Duplicate Preferential charge with identical scope combination not permitted (BR-015)',
+    priority: 'High',
+    preconditions: 'A Preferential charge already exists for ENBD on WPS with a given combination',
+    testData: 'Corporate=ENBD; Rail=WPS; Channel=NestPayHub; Message=SIF; Charge Bearer=Own',
+    expected: 'Save/submit blocked with duplicate-configuration validation error (BR-015)',
+  },
+
+  'TC-032': {
+    id: 'TC-032',
+    module: 'Charge Calculation Priority (WPS)',
+    scenario: 'Priority 1: valid active Preferential charge evaluated first (rules, then its defaults)',
+    priority: 'Critical',
+    preconditions: 'Valid active Preferential charge exists for ENBD on WPS with rules',
+    testData: 'Corporate ENBD; Preferential rules + default configured',
+    expected: 'Preferential rule or its default applied; Global not evaluated',
+  },
+  'TC-033': {
+    id: 'TC-033',
+    module: 'Charge Calculation Priority (WPS)',
+    scenario: 'Priority 2: with no valid Preferential charge, Global rules then Global defaults apply',
+    priority: 'Critical',
+    preconditions: 'No active Preferential for the corporate; Global charge Active with rules',
+    testData: 'Global rules + default configured',
+    expected: 'Global rule charge applied on match; Global default applied otherwise',
+  },
+  'TC-034': {
+    id: 'TC-034',
+    module: 'Charge Calculation Priority (WPS)',
+    scenario: 'End-to-end calculation example: ENBD / WPS / SIF / Per Transaction with rule match',
+    priority: 'Critical',
+    preconditions: "Preferential for ENBD with rule 'WPS ENBD Volume Discount' (Order 1)",
+    testData: 'Transaction Amount = AED 100',
+    expected: 'Base AED 5.10; VAT AED 0.26; Final Charge AED 5.36 (FSD Section 10.3)',
+  },
+  'TC-035': {
+    id: 'TC-035',
+    module: 'Charge Calculation Priority (WPS)',
+    scenario: 'Inactive charge is skipped; next applicable charge in priority order is used (BR-012)',
+    priority: 'Critical',
+    preconditions: 'Preferential charge Inactive; Active Global exists for WPS',
+    testData: 'Preferential = Inactive; Global = Active',
+    expected: 'Inactive Preferential skipped; Active Global evaluated instead (BR-012)',
+  },
+  'TC-036': {
+    id: 'TC-036',
+    module: 'Charge Calculation Priority (WPS)',
+    scenario: 'Draft status charge is excluded from charge calculation (BR-013)',
+    priority: 'Critical',
+    preconditions: 'A new WPS charge saved as Draft, not yet Active',
+    testData: 'Draft Preferential charge for corporate ENBD',
+    expected: 'Draft not applied; next applicable Active charge used (BR-013)',
+  },
+
+  'TC-037': {
+    id: 'TC-037',
+    module: 'CB Compliance Charges (WPS)',
+    scenario: 'Selecting WPS in the Rail Selector pre-filters applicable message types',
+    priority: 'Critical',
+    preconditions: 'User navigated to CB Compliance Charges category',
+    testData: 'Rail = WPS',
+    expected: 'Only WPS message types (SIF, DIF, RFA, EIF, PIF) shown; other rails’ types hidden',
+  },
+  'TC-038': {
+    id: 'TC-038',
+    module: 'CB Compliance Charges (WPS)',
+    scenario: 'Create a CB Compliance charge for WPS with mandatory fields (Messages, Amount, Currency)',
+    priority: 'Critical',
+    preconditions: 'WPS rail selected under CB Compliance Charges',
+    testData: 'Messages = SIF; Amount = AED 25; Currency = AED',
+    expected: 'Saved with status Pending Approval; mandatory fields enforced',
+  },
+  'TC-039': {
+    id: 'TC-039',
+    module: 'CB Compliance Charges (WPS)',
+    scenario: 'CB Compliance form shows a single flat amount, no charge-basis breakdown',
+    priority: 'High',
+    preconditions: 'User on the CB Compliance charge creation form for WPS',
+    testData: 'N/A',
+    expected: 'Only a single flat Amount field; no Per Transaction/Per File/Per Card breakdown',
+  },
+  'TC-040': {
+    id: 'TC-040',
+    module: 'CB Compliance Charges (WPS)',
+    scenario: 'With no rule selected, the CB Compliance charge applies the configured flat amount',
+    priority: 'Critical',
+    preconditions: 'Active CB Compliance charge for WPS/SIF with flat AED 25 and no rule',
+    testData: 'Rail=WPS; Message=SIF; Flat Amount=AED 25',
+    expected: 'Flat AED 25 applied as the CB Compliance charge',
+  },
+  'TC-041': {
+    id: 'TC-041',
+    module: 'CB Compliance Charges (WPS)',
+    scenario: 'An attached rule that matches overrides the flat amount',
+    priority: 'High',
+    preconditions: 'CB Compliance charge for WPS/SIF with flat AED 25 and an attached rule',
+    testData: 'Attached rule charge amount differs from flat AED 25',
+    expected: "Rule's charge amount applied for matching transactions, overriding the flat amount",
+  },
+  'TC-042': {
+    id: 'TC-042',
+    module: 'CB Compliance Charges (WPS)',
+    scenario: 'Deactivate/Activate applies to the CB Compliance charge record in edit mode',
+    priority: 'High',
+    preconditions: 'An Active CB Compliance charge exists for WPS',
+    testData: 'N/A',
+    expected: 'Deactivate sets Inactive with confirmation; Activate restores Active',
+  },
+  'TC-043': {
+    id: 'TC-043',
+    module: 'CB Compliance Charges (WPS)',
+    scenario: 'CB Compliance charge submission follows Maker-Checker approval before becoming Active',
+    priority: 'Critical',
+    preconditions: 'Maker-Checker enabled; user submits a new/edited CB Compliance charge for WPS',
+    testData: 'N/A',
+    expected: 'Pending Approval -> Active only after a different checker approves',
+  },
+  'TC-044': {
+    id: 'TC-044',
+    module: 'CB Compliance Charges (WPS)',
+    scenario: 'Mandatory field validation blocks submission of an incomplete CB Compliance charge',
+    priority: 'High',
+    preconditions: 'User creating a CB Compliance charge for WPS',
+    testData: 'N/A',
+    expected: 'Each attempt blocked identifying missing mandatory field; Description optional',
+  },
+
+  'TC-045': {
+    id: 'TC-045',
+    module: 'Access Control',
+    scenario: 'Only users with Charge Configuration access can reach the screen',
+    priority: 'Critical',
+    preconditions: 'A user account without Charge Configuration access',
+    testData: 'N/A',
+    expected: 'Access denied / menu option unavailable to the unauthorized user',
+  },
+} satisfies Record<string, TestCase>;
+
+export type TestCaseId = keyof typeof chargeConfigurationCases;
+
+/**
+ * Builds a spec title carrying the TC ID, scenario and priority tag, so
+ * `--grep @critical` selects exactly the Critical rows from the workbook.
+ */
+export function caseTitle(id: TestCaseId): string {
+  const tc = chargeConfigurationCases[id];
+  return `${tc.id} - ${tc.scenario} @${tc.priority.toLowerCase()}`;
+}
